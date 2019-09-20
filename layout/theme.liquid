@@ -69,15 +69,8 @@ $m = $.noConflict(true);
   <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
 
   <!-- Header hook for plugins ================================================== -->
-  {% include 'buddha-megamenu-before' %}
-  {% include 'buddha-megamenu' %}
   {{ content_for_header }}
 {% include 'globo.filter.script' %}
-        
-        
-{{ 'bold-brain-widget.css' | asset_url | stylesheet_tag }}
-
-{%- include 'bold-common' -%}
 
   {% include 'oldIE-js' %}
 
@@ -134,8 +127,10 @@ $m = $.noConflict(true);
 {{ 'instabadge.css' | asset_url | stylesheet_tag }}
 {% include 'instabadge' %}
 {% comment %} end instabadge section {% endcomment %}
-<!-- BeginShopPopAddon --><script>  Shopify.shopPopSettings = {"proof_enabled":true,"proof_show_add_to_cart":true,"proof_mobile_enabled":true,"proof_mobile_position":"Bottom","proof_desktop_position":"Bottom Left","proof_show_on_product_page":true,"proof_hide_notification_after":30,"proof_display_time":6,"proof_interval_time":5,"proof_order_random":false,"proof_fetch_count":30,"proof_cycle":true,"proof_anonymize":true,"proof_anonymize_text":null,"proof_hours_before_obscure":48,"proof_sequential":true,"proof_top":10,"proof_left":10,"proof_right":10,"proof_bottom":10,"proof_background_color":"#FFFFFF","proof_font_color":"#000000","proof_custom_css":null,"proof_border_radius":40,"proof_first_interval_time":1,"proof_locale":"en"};</script><!-- EndShopPopAddon -->
+
 <!-- BeginConsistentCartAddon -->  <script>  {% if customer %}  Shopify.merge_cart_text = '{{ "consistent_cart_addon.merge_cart_text" | t }}' ;  Shopify.customer_logged_in = true ;  Shopify.customer_email = "{{ customer.email }}" ;  Shopify.log_uuids = true;  {% else %}  Shopify.customer_logged_in = false ;  Shopify.customer_email = "" ;  Shopify.log_uuids = true;  {% endif %}  </script>  <!-- EndConsistentCartAddon -->
+<script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
+<!-- BeginShopPopAddon --><script>  Shopify.shopPopSettings = {"proof_enabled":true,"proof_show_add_to_cart":true,"proof_mobile_enabled":true,"proof_mobile_position":"Bottom","proof_desktop_position":"Bottom Left","proof_show_on_product_page":true,"proof_hide_notification_after":30,"proof_display_time":6,"proof_interval_time":5,"proof_order_random":false,"proof_fetch_count":30,"proof_cycle":true,"proof_anonymize":true,"proof_anonymize_text":null,"proof_hours_before_obscure":48,"proof_sequential":true,"proof_top":10,"proof_left":10,"proof_right":10,"proof_bottom":10,"proof_background_color":"#FFFFFF","proof_font_color":"#000000","proof_custom_css":null,"proof_border_radius":40,"proof_first_interval_time":1,"proof_locale":"en"};</script><!-- EndShopPopAddon -->
 </head>
 
 
@@ -143,7 +138,6 @@ $m = $.noConflict(true);
   Add the page template as a class for easy page or template specific styling.
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="gf-left swatch-round {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
-  {% include 'buddha-megamenu-wireframe' %}
 <!-- ROIHunterEasy BodySection start -->{{ 'roi_hunter_easy_body_section.js' | asset_url | script_tag }}<!-- ROIHunterEasy BodySection end -->
 
   <div id="NavDrawer" class="drawer drawer--left">
