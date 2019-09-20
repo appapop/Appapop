@@ -1,0 +1,21 @@
+<div class="powr-tabs" id="cb867414_1555576748"></div>         
+		
+
+
+
+<!-- /templates/product.liquid -->
+{% comment %}
+  The contents of the product.liquid template can be found in /sections/product-template.liquid
+{% endcomment %}
+
+{% section 'product-template' %}
+<div data-app="eastsideco_sizeGuides"
+     data-shop="{{ shop.permanent_domain }}"
+     data-tags="{{ product.tags | join:',' | escape }}"
+     data-metafields="{{ product.metafields.esc-size-matters.tag }}"
+     data-popup="">
+</div><div class="yotpo yotpo-main-widget" data-product-id="{{ product.id }}" data-name="{{ product.title | escape }}" data-url="{{ shop.url }}{{ product.url }}" data-image-url="{{ product.featured_image | product_img_url: 'large' |replace: '?', '%3F' | replace: '&amp;','%26'}}" data-description="{{ product.description | escape }}" data-price="{{ variant.price | money_without_currency }}" data-currency="{{ shop.currency }}"></div>
+
+{{product.metafields.shogun.below}}
+
+<!--PERZONALIZATION-START Do not modify or delete this comment--><div id="perzonalization" class="perzonalization"></div><script type='text/javascript'>var productDetailsForPrz = {{ product | json }};var basketDetailsForPrz = {{ cart | json }};var filterDetailsForPrz = {{ collection | json }};var detailsForPrz = { userId: '{{ customer.id }}', language: '{{ shop.locale }}', currency:'{{ shop.currency }}' };var searchDetailsForPrz = {{ search.results | json }};if(productDetailsForPrz) { productDetailsForPrz.collections = []; }{% for collection in product.collections %}   if(productDetailsForPrz) { productDetailsForPrz.collections.push("{{ collection.title }}") }{% endfor %}</script><!--Do not modify or delete this comment PERZONALIZATION-END--> <div class="powr-tabs" id="c4ab592e_1555575164"></div>{% include "fireapps-shipping" %}

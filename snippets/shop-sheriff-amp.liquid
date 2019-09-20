@@ -1,0 +1,10 @@
+{% comment %}Managed by ShopSheriff Shopify app{% endcomment %}
+
+{% if template contains 'product' %}
+  {% assign amp_path = '/products/' | append: product.handle %}
+{% endif %}
+{% unless denyAmp %}
+{% if amp_path %}
+   <link rel="amphtml" href="{{ 'https://' | append: 'appapop.com/a/s' | append: amp_path  }}">
+{% endif %}
+{% endunless %}

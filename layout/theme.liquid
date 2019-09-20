@@ -1,0 +1,313 @@
+{%- comment -%}smartseo_integration_begin{%- endcomment -%}{%- capture smartseo_theme_content -%}{%- comment -%}smartseo_integration_end{%- endcomment -%}<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="ie9 no-js"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  {% include 'shop-sheriff-pwa' %}
+<!-- PROGRESSIFY-ME:START -->
+{%- comment -%}smartseo_integration_begin{%- endcomment -%}{% include 'smartseo' %}{%- comment -%}smartseo_integration_end{%- endcomment -%}<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script>
+$m = $.noConflict(true);
+</script>
+{% include 'booster-seo' %}
+
+<!-- AMPIFY-ME:START -->
+{% include 'kiwiSizing' %}
+
+  <!-- Basic page needs ================================================== -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  {% if settings.favicon %}
+    <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
+  {% endif %}
+
+  <!-- Title and description ================================================== -->
+  {% comment %}{% include 'SEOManager' %}{% endcomment %}
+
+  <!-- Helpers ================================================== -->
+  {% include 'social-meta-tags' %}
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+  <meta name="theme-color" content="{{ settings.color_primary }}">
+
+  <!-- CSS ================================================== -->
+  {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  {% include 'google-fonts' %}
+
+  <!-- Sections ================================================== -->
+  <script>
+    window.theme = window.theme || {};
+    theme.strings = {
+      zoomClose: {{ "products.zoom.close" | t | json }},
+      zoomPrev: {{ "products.zoom.prev" | t | json }},
+      zoomNext: {{ "products.zoom.next" | t | json }},
+      moneyFormat: {{ shop.money_format | json }},
+      addressError: {{ 'home_page.map.address_error' | t | json }},
+      addressNoResults: {{ 'home_page.map.address_no_results' | t | json }},
+      addressQueryLimit: {{ 'home_page.map.address_query_limit_html' | t | json }},
+      authError: {{ 'home_page.map.auth_error_html' | t | json }},
+      cartEmpty: {{ 'cart.general.empty' | t | json }},
+      cartCookie: {{ 'cart.general.cookies_required' | t | json }},
+      cartSavings: {{ 'cart.general.savings_html' | t: price: '[savings]' | json }}
+    };
+    theme.settings = {
+      cartType: {{ settings.cart_type | json }},
+      gridType: {{ settings.collection_products_grid | json }}
+    };
+  </script>
+
+  {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'lazysizes.min.js' | asset_url }}"></script><![endif]-->
+
+  <!--[if (gt IE 9)|!(IE)]><!--><script src="{{ 'theme.js' | asset_url }}" defer="defer"></script><!--<![endif]-->
+  <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
+
+  <!-- Header hook for plugins ================================================== -->
+  {% include 'buddha-megamenu-before' %}
+  {% include 'buddha-megamenu' %}
+  {{ content_for_header }}
+{% include 'globo.filter.script' %}
+        
+        
+{{ 'bold-brain-widget.css' | asset_url | stylesheet_tag }}
+
+{%- include 'bold-common' -%}
+
+  {% include 'oldIE-js' %}
+
+  {{ 'modernizr.min.js' | asset_url | script_tag }}
+
+  {% comment %}
+    If you store has customer accounts disabled, you can remove the following JS file
+  {% endcomment %}
+  {% if template.directory == 'customers' %}
+    {{ 'shopify_common.js' | shopify_asset_url | script_tag }}
+  {% endif %}
+
+
+      {{ 'paymentfont.scss.css' | asset_url | stylesheet_tag }}
+    
+<!-- BeginWishyAddon --><script>  Shopify.wishy_btn_settings = {"button_setting":"","btn_append":"before","btn_display":"block","btn_width":"auto","btn_margin_top":5,"btn_margin_left":5,"btn_margin_right":5,"btn_margin_bottom":5,"btn_margin_unit":"px","btn_placer_element":null,"btn_background_color":"#ffffff","btn_border_color":"#b9b9b9","btn_border_width":1,"btn_text":"♡ Add to wishlist","btn_color":"#1b1b1b","remove_btn_background_color":"#5c6ac4","remove_btn_border_color":"#3f4eae","remove_btn_border_width":1,"remove_btn_color":"#ffffff","new_theme_published_at":null,"installed":true,"heart_icon_margin_right":15,"heart_icon_margin_bottom":15,"heart_icon_location":"bottom-right","heart_icon_margin_top":15,"heart_icon_margin_left":15,"setting_force_login":false,"heart_icon_url_match":"","heart_icon_enabled":true,"status":null,"spf_record":null,"floating_favorites_enabled":false,"floating_favorites_location":"right","floating_favorites_margin_top":50,"floating_favorites_url_match":"","floating_favorites_background_color":"#ffffff","floating_favorites_border_color":"#b9b9b9","floating_favorites_border_width":1,"floating_favorites_text":"♥ Favorites","floating_favorites_color":"#1b1b1b","heart_icon_type":"default","heart_icon_typedefault_background_color":"#ff8989","heart_icon_typedefault_border_color":"#ff9c9c","heart_icon_typedefault_border_width":2,"heart_icon_typedefault_icon_color":"#ffffff","heart_icon_show_count":true,"heart_icon_typecustom_image_url":"https://cc-swim.herokuapp.com/wishlist.png","btn_text_size":"16.0","locale":null,"shop_star_rating":null,"shop_star_feedback":null,"heart_icon_collection_before_add_color":"#dfdfdf","heart_icon_collection_after_add_color":"#606060","login_link_bg_color":"#5c6ac4","login_link_text_color":"#3f4eae"};  Shopify.wishy_button_css_json = "";  {% if customer %}  Shopify.wishy_customer_email = "{{ customer.email }}" ;  {% else %}  Shopify.wishy_customer_email = "" ;  {% endif %}</script><!-- EndWishyAddon -->
+
+<!-- ROIHunterEasy HeadSnippet start -->{% include 'roi_hunter_easy_head_snippet' %}<!-- ROIHunterEasy HeadSnippet end -->
+
+  
+
+  {% include 'shogun-head' %}
+
+
+		<!-- Snippet for Simple Preorder app -->
+		{% include 'simple-preorder-bootstrap' %}
+
+
+
+
+{% include 'pagefly-header' %}
+
+ 
+  {% include 'qikify-navigator' %}
+  {{ 'qikify-smartmenu-data.js' | asset_url | script_tag }}
+  <script type="text/javascript" src="{{ 'qikify-smartmenu-v3.min.js?shop=' | append: shop.permanent_domain | asset_url }}" defer="defer"></script>
+                      <!--StartCartCartCustomCode-->
+                      
+                      <!-- Abandoned Cart Information -->
+                      <div id="care-cart-customer-information" style="display:none">
+                        {"id":"{{customer.id}}", "email":"{{ customer.email }}","default_address":{{ customer.default_address | json }},"first_name":"{{ customer.first_name }}","last_name":"{{ customer.last_name }}","name":"{{ customer.name }}" }
+                      </div>
+                      <!-- Abandoned Cart Information -->
+                      
+                      <!--  ShopInformation -->
+                      <div id="care-cart-shop-information" style="display:none">
+                        {"domain":"{{shop.permanent_domain}}" }
+                      </div>
+                      <!--  ShopInformation -->
+                      
+                      <!--EndCareCartCustomCode-->
+                      
+{% comment %} start instabadge section {% endcomment %}
+{{ 'instabadge.css' | asset_url | stylesheet_tag }}
+{% include 'instabadge' %}
+{% comment %} end instabadge section {% endcomment %}
+<!-- BeginShopPopAddon --><script>  Shopify.shopPopSettings = {"proof_enabled":true,"proof_show_add_to_cart":true,"proof_mobile_enabled":true,"proof_mobile_position":"Bottom","proof_desktop_position":"Bottom Left","proof_show_on_product_page":true,"proof_hide_notification_after":30,"proof_display_time":6,"proof_interval_time":5,"proof_order_random":false,"proof_fetch_count":30,"proof_cycle":true,"proof_anonymize":true,"proof_anonymize_text":null,"proof_hours_before_obscure":48,"proof_sequential":true,"proof_top":10,"proof_left":10,"proof_right":10,"proof_bottom":10,"proof_background_color":"#FFFFFF","proof_font_color":"#000000","proof_custom_css":null,"proof_border_radius":40,"proof_first_interval_time":1,"proof_locale":"en"};</script><!-- EndShopPopAddon -->
+<!-- BeginConsistentCartAddon -->  <script>  {% if customer %}  Shopify.merge_cart_text = '{{ "consistent_cart_addon.merge_cart_text" | t }}' ;  Shopify.customer_logged_in = true ;  Shopify.customer_email = "{{ customer.email }}" ;  Shopify.log_uuids = true;  {% else %}  Shopify.customer_logged_in = false ;  Shopify.customer_email = "" ;  Shopify.log_uuids = true;  {% endif %}  </script>  <!-- EndConsistentCartAddon -->
+</head>
+
+
+{% comment %}
+  Add the page template as a class for easy page or template specific styling.
+{% endcomment %}
+<body id="{{ page_title | handle }}" class="gf-left swatch-round {% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}">
+  {% include 'buddha-megamenu-wireframe' %}
+<!-- ROIHunterEasy BodySection start -->{{ 'roi_hunter_easy_body_section.js' | asset_url | script_tag }}<!-- ROIHunterEasy BodySection end -->
+
+  <div id="NavDrawer" class="drawer drawer--left">
+    {% section 'drawer-menu' %}
+  </div>
+  <div id="CartDrawer" class="drawer drawer--right drawer--has-fixed-footer">
+    <div class="drawer__fixed-header">
+      <div class="drawer__header">
+        <div class="drawer__title">{{ 'cart.general.title' | t }}</div>
+        <div class="drawer__close">
+          <button type="button" class="icon-fallback-text drawer__close-button js-drawer-close">
+            <span class="icon icon-x" aria-hidden="true"></span>
+            <span class="fallback-text">{{ 'cart.general.close_cart' | t }}</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="drawer__inner">
+      <div id="CartContainer" class="drawer__cart"></div>
+    </div>
+  </div>
+
+  <div id="PageContainer" class="page-container">
+
+    {% section 'header' %}
+
+    {% if template.name == "index" %}
+      {% section 'slideshow' %}
+    {% endif %}
+
+    <main class="main-content" role="main">
+      {% unless template.name == "index" or template == "collection.image" %}
+        <div class="wrapper">
+      {% endunless %}
+        {{ content_for_layout }}{% include 'vnavs' %}
+      {% unless template.name == "index" or template == "collection.image" %}
+        </div>
+      {% endunless %}
+    </main>
+
+    <hr class="hr--large">
+
+    {% section 'footer' %}
+
+  </div>
+
+  {% comment %}
+    Template-specific js
+  {% endcomment %}
+  <script>
+    {% if resetPassword %}
+      $(function() {
+        timber.resetPasswordSuccess();
+      });
+    {% endif %}
+  </script>
+
+  {% comment %}
+    Ajaxify your cart with this plugin.
+    Documentation:
+      - http://shopify.com/timber#ajax-cart
+  {% endcomment %}
+  {% if settings.cart_type == 'drawer' %}
+    {% include 'ajax-cart-template' %}
+  {% endif %}
+
+  {% if template.name == 'product' or template.name == 'index' %}
+      <script>
+        // Override default values of shop.strings for each template.
+        // Alternate product templates can change values of
+        // add to cart button, sold out, and unavailable states here.
+        theme.productStrings = {
+          addToCart: {{ 'products.product.add_to_cart' | t | json }},
+          soldOut: {{ 'products.product.sold_out' | t | json }},
+          unavailable: {{ 'products.product.unavailable' | t | json }}
+        }
+      </script>
+    {% endif %}
+
+  <div id="SearchModal" class="mfp-hide">
+    {% include 'search-bar', search_btn_style: 'btn', search_bar_location: 'search-bar--modal' %}
+  </div>
+
+
+{% include 'swymSnippet' %}
+
+<!-- BEEKETINGSCRIPT CODE START -->{% include 'bk-tracking' %}<!-- BEEKETINGSCRIPT CODE END -->{% include 'social-login' %}
+
+{% include 'booster-discounts' %}
+{% comment %}This is for Product Option App by hulkapps{% endcomment %}{% comment %}{% include 'hulkcode_common' %}{% endcomment %}
+<!-- spurit_uev-added -->
+{% include 'spurit_uev-theme-snippet' %}
+<!-- /spurit_uev-added -->
+
+ 
+
+{% include 'whatsapp-share' %}
+
+
+<!-- **BEGIN** Hextom SPM Integration // Main Include - DO NOT MODIFY -->
+    {% include 'hextom_spm_main' %}
+    <!-- **END** Hextom SPM Integration // Main Include - DO NOT MODIFY -->
+
+<!-- spurit_sct-added -->
+{% include 'spurit_sct-theme-snippet' %}
+<!-- /spurit_sct-added -->
+
+
+{%include 'sc-pb-25052016'%}
+
+        {% include 'elspl_theme' %}
+{% include 'globo.filter.action' %}
+	
+{% if template != "cart" %} {% assign pageurl = content_for_header| split:'"pageurl":"' | last | split:'"' | first %}
+{% assign Shopdomain = pageurl | split : "\/" | first %}
+<script id='editcartmlvedaajaxscript' mlveda='{{Shopdomain}}' src= 'https://appapop.myshopify.com/apps/EditCart/editcartajaxproxy.js'></script>
+{% include 'mlveda-optionselection' %}{% endif %}
+{% include 'magisto' %}
+{{ 'booster-page-speed-optimizer.js' | asset_url | script_tag }}
+</body>
+        
+ 
+ 
+</html>
+    <!-- StartDeliveryDateRange version: 1.4 -->
+    <script>
+      var DeliveryDateRangeData = (function() {
+        var data = {
+          product: null,
+          cartProducts: []
+        };
+
+        {% if product %}
+          {% assign collection_titles = product.collections | map: 'title' | downcase %}
+          data.product = (function() {
+            return {
+              tags: {{ product.tags | json }},
+              collections: {{ collection_titles }},
+              vendor: "{{ product.vendor | downcase }}",
+              type: "{{ product.type | downcase }}",
+              available: {{ product.available }},
+              inventory_quantity: "{{ product.selected_or_first_available_variant.inventory_quantity }}"
+            }
+          })();
+        {% endif %}
+        {% if cart.items.size > 0 %}
+          {% for item in cart.items %}
+            {% assign collection_titles = item.product.collections | map: 'title' | downcase %}
+            data.cartProducts.push(function() {
+              return {
+                variant_id: "{{ item.variant_id }}",
+                inventory_quantity: "{{ item.variant.inventory_quantity }}",
+                tags: {{ item.product.tags | json }},
+                collections: {{ collection_titles }},
+                vendor: "{{ item.product.vendor | downcase }}",
+                type: "{{ item.product.type | downcase }}"
+              }
+            }());
+          {% endfor %}
+        {% endif %}
+
+        return data;
+      })();
+
+    </script>
+    <!-- EndDeliveryDateRange -->
+{%- comment -%}smartseo_integration_begin{%- endcomment -%}{%- endcapture -%}{%- include 'smartseo-alt-tags' with smartseo_theme_content -%}{%- comment -%}smartseo_integration_end{%- endcomment -%}

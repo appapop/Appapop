@@ -1,0 +1,11 @@
+<!-- /templates/404.liquid -->
+
+<header class="section-header section-header--404 text-center">
+  <h1>{{ 'general.404.title' | t }}</h1>
+  <hr class="hr--small">
+  <p>{{ 'general.404.subtext_html' | t }}</p>
+</header>
+
+{% include 'SEOManager-404' %}
+
+<!--PERZONALIZATION-START Do not modify or delete this comment--><div id="perzonalization" class="perzonalization"></div><script type='text/javascript'>var productDetailsForPrz = {{ product | json }};var basketDetailsForPrz = {{ cart | json }};var filterDetailsForPrz = {{ collection | json }};var detailsForPrz = { userId: '{{ customer.id }}', language: '{{ shop.locale }}', currency:'{{ shop.currency }}' };var searchDetailsForPrz = {{ search.results | json }};if(productDetailsForPrz) { productDetailsForPrz.collections = []; }{% for collection in product.collections %}   if(productDetailsForPrz) { productDetailsForPrz.collections.push("{{ collection.title }}") }{% endfor %}</script><!--Do not modify or delete this comment PERZONALIZATION-END--><script id="esc-redirects-404-script" src="https://redirects.eastsideco.io/js/app.js"></script>
