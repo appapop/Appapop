@@ -69,7 +69,9 @@ $m = $.noConflict(true);
   <!--[if lte IE 9]><script src="{{ 'theme.js' | asset_url }}"></script><![endif]-->
 
   <!-- Header hook for plugins ================================================== -->
-  {{ content_for_header }}
+  {{ 'ndnapps-sociallogin.css' | asset_url | stylesheet_tag }}
+{{ content_for_header }}
+{% if shop.customer_accounts_enabled %}{% unless customer  %}{{ 'ndnapps-sociallogin-script.js' | asset_url | script_tag }}{% endunless %}{% endif %}
 {% include 'globo.filter.script' %}
 
   {% include 'oldIE-js' %}
@@ -257,6 +259,7 @@ $m = $.noConflict(true);
 {% include 'mlveda-optionselection' %}{% endif %}
 {% include 'magisto' %}
 {{ 'booster-page-speed-optimizer.js' | asset_url | script_tag }}
+	{% include 'flits_snippet' %}
 </body>
         
  
